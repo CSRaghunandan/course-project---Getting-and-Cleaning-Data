@@ -613,7 +613,7 @@ variables of the above 3 datasets datasets :-
 ##meanStdData
 This contains only the measurements on the mean and standard deviation for each measurement.
                  
-How it was created :- 
+
 1. read the features.txt file which contains all the variable names for the dataaset.
   1. use stringsAsFactors = FALSE.
 2. extract the names from the features dataframe and assign it to a vector called colNames.
