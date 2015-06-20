@@ -49,7 +49,7 @@ angle(): Angle between to vectors.
 ```
 
 variables of the above 3 datasets datasets :- 
-
+```
 1 tBodyAcc-mean()-X
 2 tBodyAcc-mean()-Y
 3 tBodyAcc-mean()-Z
@@ -611,12 +611,12 @@ variables of the above 3 datasets datasets :-
 559 angle(X,gravityMean)
 560 angle(Y,gravityMean)
 561 angle(Z,gravityMean)
-
+```
 
 
 ##meanStdData
 This contains only the measurements on the mean and standard deviation for each measurement.
-                 
+```                 
 How it was created :- 
 1. read the features.txt file which contains all the variable names for the dataaset.
   1. use stringsAsFactors = FALSE.
@@ -641,7 +641,9 @@ Use descriptive activity names to name the activities in the data set and label 
 10. read the activity lables and store it in a vector named "activityLabel".
 11. Add labels to the dataframe based on subject activity using the factor() function with levels = activityLabel 
     and conerce the output from factors() to character.
+```
 
+```
 'data.frame':	10299 obs. of  68 variables:
  $ tBodyAcc.mean...X          : num  0.289 0.278 0.28 0.279 0.277 ...
  $ tBodyAcc.mean...Y          : num  -0.0203 -0.0164 -0.0195 -0.0262 -0.0166 ...
@@ -711,9 +713,11 @@ Use descriptive activity names to name the activities in the data set and label 
  $ fBodyBodyGyroJerkMag.std.. : num  -0.991 -0.996 -0.995 -0.995 -0.995 ...
  $ Subject                    : int  1 1 1 1 1 1 1 1 1 1 ...
  $ Activity                   : chr  "STANDING" "STANDING" "STANDING" "STANDING" ...
+```
 
 Summary statistics for meanStdData :-
 
+```
 tBodyAcc.mean...X tBodyAcc.mean...Y  tBodyAcc.mean...Z  tBodyAcc.std...X 
  Min.   :-1.0000   Min.   :-1.00000   Min.   :-1.00000   Min.   :-1.0000  
  1st Qu.: 0.2626   1st Qu.:-0.02490   1st Qu.:-0.12102   1st Qu.:-0.9924  
@@ -851,20 +855,23 @@ tBodyAcc.mean...X tBodyAcc.mean...Y  tBodyAcc.mean...Z  tBodyAcc.std...X
  Length:10299      
  Class :character  
  Mode  :character  
-                   
+```                
 
 ## final 
 
 This data frame consists of average of each variable for each activity and each subject.
 Group 1 represents Subject and Group 2 represents Activity performed by the subject.
 the remainig observations are the average for each variable in meanStdData grouped by activity and subset.
+```
 how it was created :- 
 1. create the "final" dataframe using aggregate function grouped by activity and subject on Mean.
 This will create two more variables group.1 (subject) and Group.2(Activity)
 2. clean up the final dataframe 
 (remove the Activity and Subject variables as they are already mentioned in Group 1 and Group 2 variables of the final dataframe) 
 3. save the "final" dataframe to the local disk.
-   
+```
+
+```
 'data.frame':	180 obs. of  68 variables:
  $ Group.1                    : int  1 2 3 4 5 6 7 8 9 10 ...
  $ Group.2                    : chr  "LAYING" "LAYING" "LAYING" "LAYING" ...
@@ -934,8 +941,12 @@ This will create two more variables group.1 (subject) and Group.2(Activity)
  $ fBodyBodyGyroMag.std..     : num  -0.824 -0.961 -0.955 -0.947 -0.959 ...
  $ fBodyBodyGyroJerkMag.mean..: num  -0.942 -0.99 -0.984 -0.984 -0.985 ...
  $ fBodyBodyGyroJerkMag.std.. : num  -0.933 -0.989 -0.983 -0.983 -0.983 ...
+```
+
 
 Summary statistics for final dataframe :-
+
+```
    Group.1       Group.2          tBodyAcc.mean...X tBodyAcc.mean...Y  
  Min.   : 1.0   Length:180         Min.   :0.2216    Min.   :-0.040514  
  1st Qu.: 8.0   Class :character   1st Qu.:0.2712    1st Qu.:-0.020022  
@@ -1076,3 +1087,4 @@ Summary statistics for final dataframe :-
  Mean   :-0.7715           
  3rd Qu.:-0.6081           
  Max.   : 0.2878           
+```
