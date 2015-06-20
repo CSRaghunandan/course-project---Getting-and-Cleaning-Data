@@ -6,6 +6,7 @@ this dataframe contains the training dataset (has 7352 observations)
  this dataframe is created by merging the training and test datasets (has 10299 observations).
  merged using rbind() function.
 
+```
 Signals in these datasets :-
 tBodyAcc-XYZ
 tGravityAcc-XYZ
@@ -24,7 +25,9 @@ fBodyAccMag
 fBodyAccJerkMag
 fBodyGyroMag
 fBodyGyroJerkMag
+```
 
+```
 The set of variables that were estimated from these signals are: 
 mean(): Mean value
 std(): Standard deviation
@@ -43,6 +46,7 @@ skewness(): skewness of the frequency domain signal
 kurtosis(): kurtosis of the frequency domain signal 
 bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
 angle(): Angle between to vectors.
+```
 
 variables of the above 3 datasets datasets :- 
 
@@ -633,10 +637,10 @@ Use descriptive activity names to name the activities in the data set and label 
 6. read the training subject dataframe and store it in a dataframe "subjectTrain" using read.table command.
 7. read the test subject dataframe and store it in a dataframe "subjectTest" using read.table command.
 8. merge the above two dataframes to from "subject" dataframe. This describes which subject each observation belongs to.
-9. add the subject variable to our dataframe
-10. read the activity lables and store it in a vector named "activityLabel"
+9. add the subject variable to our dataframe.
+10. read the activity lables and store it in a vector named "activityLabel".
 11. Add labels to the dataframe based on subject activity using the factor() function with levels = activityLabel 
-    and conerce the output from factors() to character
+    and conerce the output from factors() to character.
 
 'data.frame':	10299 obs. of  68 variables:
  $ tBodyAcc.mean...X          : num  0.289 0.278 0.28 0.279 0.277 ...
